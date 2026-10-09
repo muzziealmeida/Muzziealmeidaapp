@@ -148,3 +148,9 @@
 .public-shell .public-header > .brand.transparent-logo img{position:relative!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;transform:scale(2.65);transform-origin:center center}
 @media(max-width:1150px){.public-shell .public-header > .brand.transparent-logo{width:190px;min-width:190px;height:88px}}
 @media(max-width:768px){.public-shell .public-header > .brand.transparent-logo{width:160px;min-width:160px;height:74px}}
+
+/* Correção definitiva: logo horizontal sem crop/zoom e com proporção natural */
+.public-shell .public-header > .brand.transparent-logo{width:255px!important;min-width:255px!important;height:104px!important;overflow:visible!important;aspect-ratio:auto!important;background:transparent!important;flex-shrink:0}
+.public-shell .public-header > .brand.transparent-logo img{position:static!important;width:100%!important;max-width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;left:auto!important;top:auto!important;transform:none!important;clip-path:none!important}
+@media(max-width:1150px){.public-shell .public-header > .brand.transparent-logo{width:205px!important;min-width:205px!important;height:86px!important}}
+@media(max-width:768px){.public-shell .public-header > .brand.transparent-logo{width:175px!important;min-width:175px!important;height:74px!important}}
