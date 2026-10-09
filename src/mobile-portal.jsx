@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import {money,date} from './lib.js';
 const links={overview:['⌂','Início'],cases:['▣','Processos'],events:['▦','Agenda'],payments:['◇','Financeiro'],documents:['▤','Documentos'],profiles:['♙','Clientes'],articles:['☷','Publicações'],settings:['⚙','Site'],access:['♧','Acessos']};
-function Logo(){return <a href="/app" className="pwa-brand" aria-label="Voltar ao aplicativo Muzzie Almeida"><img src="/identidade-original.jpeg" alt="Muzzi & Almeida Advocacia"/></a>}
+function Logo(){return <a href="/app" className="pwa-brand" aria-label="Voltar ao aplicativo Muzzie Almeida"><img src="/logo-muzzi-almeida.svg" alt="Muzzi & Almeida Advocacia"/></a>}
 const Empty=({children})=><p className="pwa-empty">{children}</p>;
 export default function MobilePortal({staff,profile,user,tab,setTab,nav,cases,events,payments,documents,data,clientName,loading,error,retry,search,setSearch,client,setClient,onEdit,onDelete,onDownload,onLogout,settings,onSettings,onAccess,onCalendar}){
  const [selectedCase,setSelectedCase]=useState(null),[menu,setMenu]=useState(false);
