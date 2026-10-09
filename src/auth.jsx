@@ -3,7 +3,7 @@ import {db} from './lib.js';
 import {normalizeUsername,loginEmail} from '../shared/access-utils.js';
 
 function Input({label,...props}){return <label className="field"><span>{label}</span><input {...props}/></label>}
-function Brand(){return <a href="/" className="brand" aria-label="Voltar ao site"><img src="/identidade-original.jpeg" alt="Muzzi & Almeida Advocacia"/></a>}
+function Brand(){return <a href="/" className="brand" aria-label="Voltar ao site"><img src="/logo-muzzi-almeida.svg" alt="Muzzi & Almeida Advocacia"/></a>}
 function AuthLayout({staff,children}){return <div className="auth-page"><aside className="auth-art"><Brand/><div><span className="eyebrow light">{staff?'PAINEL DOS ADVOGADOS':'ÁREA DO CLIENTE'}</span><h1>{staff?<>Seu escritório.<br/><em>Em suas mãos.</em></>:<>Mais clareza.<br/><em>Mais proximidade.</em></>}</h1><p>{staff?'Gerencie o site, os atendimentos, os documentos e os acessos do escritório.':'Consulte seus processos, compromissos, documentos e pagamentos.'}</p></div><span>Muzzi & Almeida Advocacia</span></aside><main className="auth-main"><a className="inline-link" href="/">← Voltar ao site</a><div className="auth-form">{children}</div></main></div>}
 export function Login({staff,notify,go}){
  const [busy,setBusy]=useState(false),[help,setHelp]=useState(false);
