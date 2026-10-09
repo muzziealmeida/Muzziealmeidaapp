@@ -66,3 +66,7 @@
 .pwa-private-head .pwa-brand{width:215px;height:87px;max-width:calc(100vw - 124px);overflow:visible}
 .pwa-private-head .pwa-brand img{position:static;width:100%;height:100%;max-width:100%;object-fit:contain}
 @media(max-width:390px){.mobile-app-header .mobile-wordmark{width:195px;height:77px}.pwa-private-head .pwa-brand{width:190px;height:77px}.pwa-drawer{top:104px}}
+
+/* Logo do PWA sem corte, mantendo SVG transparente */
+.mobile-app-header .mobile-wordmark,.pwa-private-head .pwa-brand{overflow:visible!important;background:transparent!important}
+.mobile-app-header .mobile-wordmark img,.pwa-private-head .pwa-brand img{display:block!important;position:static!important;width:100%!important;height:100%!important;max-width:100%!important;transform:none!important;object-fit:contain!important;clip-path:none!important}
