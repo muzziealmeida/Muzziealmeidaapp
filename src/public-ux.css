@@ -154,3 +154,26 @@
 .public-shell .public-header > .brand.transparent-logo img{position:static!important;width:100%!important;max-width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;left:auto!important;top:auto!important;transform:none!important;clip-path:none!important}
 @media(max-width:1150px){.public-shell .public-header > .brand.transparent-logo{width:205px!important;min-width:205px!important;height:86px!important}}
 @media(max-width:768px){.public-shell .public-header > .brand.transparent-logo{width:175px!important;min-width:175px!important;height:74px!important}}
+
+
+/* One official transparent PNG across website and PWA.
+   Neutralize legacy crop/position transforms that hid the mark. */
+.public-shell .public-header > .brand.transparent-logo,
+.public-shell .public-header > .brand.transparent-logo.compact {
+  width: 240px !important; min-width: 240px !important; height: 104px !important;
+  display: flex !important; justify-content: center !important; align-items: center !important;
+  overflow: visible !important; background: transparent !important;
+}
+.public-shell .public-header > .brand.transparent-logo > img {
+  position: static !important; display: block !important;
+  width: 100% !important; height: 100% !important; max-width: 100% !important;
+  object-fit: contain !important; object-position: center !important;
+  transform: none !important; filter: brightness(0) invert(1) !important;
+  top: auto !important; left: auto !important; clip-path: none !important;
+}
+@media(max-width:1150px){
+  .public-shell .public-header > .brand.transparent-logo{width:200px !important;min-width:200px !important;height:88px !important}
+}
+@media(max-width:768px){
+  .public-shell .public-header > .brand.transparent-logo{width:175px !important;min-width:175px !important;height:76px !important}
+}
