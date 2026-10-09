@@ -70,3 +70,24 @@
 /* Logo do PWA sem corte, mantendo SVG transparente */
 .mobile-app-header .mobile-wordmark,.pwa-private-head .pwa-brand{overflow:visible!important;background:transparent!important}
 .mobile-app-header .mobile-wordmark img,.pwa-private-head .pwa-brand img{display:block!important;position:static!important;width:100%!important;height:100%!important;max-width:100%!important;transform:none!important;object-fit:contain!important;clip-path:none!important}
+
+
+/* Same PNG artwork rendered white against dark branded surfaces. */
+.mobile-app-header .mobile-wordmark > img,
+.pwa-private-head .pwa-brand > img,
+.auth-page .brand > img,
+.sidebar .brand > img,
+footer .brand > img {
+  filter: brightness(0) invert(1) !important;
+  display: block !important; position: static !important;
+  width: 100% !important; height: 100% !important;
+  max-width: 100% !important; object-fit: contain !important;
+  transform: none !important; clip-path: none !important;
+}
+.mobile-app-header .mobile-wordmark{width:225px !important;height:86px !important}
+.pwa-private-head .pwa-brand{width:215px !important;height:87px !important}
+.auth-page .brand{width:225px;height:94px}
+@media(max-width:390px){
+.mobile-app-header .mobile-wordmark{width:185px !important;height:76px !important}
+.pwa-private-head .pwa-brand{width:185px !important;height:76px !important}
+}
