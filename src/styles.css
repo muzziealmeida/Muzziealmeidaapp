@@ -91,3 +91,13 @@ footer .brand > img {
 .mobile-app-header .mobile-wordmark{width:185px !important;height:76px !important}
 .pwa-private-head .pwa-brand{width:185px !important;height:76px !important}
 }
+
+/* Brand mark final: consistent aspect ratio; dark surface for white logo. */
+.pwa-private-head{background:var(--deep)!important;border-bottom:1px solid #ffffff20!important;color:#fff!important}
+.pwa-private-head-actions button{background:transparent!important;color:#fff!important;border-color:#ffffff65!important}
+.pwa-private-head-actions span{color:#fff!important}
+.mobile-app-header .mobile-wordmark,
+.pwa-private-head .pwa-brand{width:225px!important;height:92px!important;max-width:calc(100vw - 130px)!important;overflow:visible!important;aspect-ratio:236/96!important}
+.mobile-app-header .mobile-wordmark img,
+.pwa-private-head .pwa-brand img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;filter:none!important;transform:none!important}
+@media(max-width:390px){.mobile-app-header .mobile-wordmark,.pwa-private-head .pwa-brand{width:185px!important;height:76px!important}}
