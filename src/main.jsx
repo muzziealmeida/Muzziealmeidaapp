@@ -10,7 +10,7 @@ import MobileExperience,{MobileAccess} from './mobile.jsx';
 import MobilePortal from './mobile-portal.jsx';
 
 function Icon({name,size=20}) {const paths={arrow:'M5 12h14M13 6l6 6-6 6',case:'M8 7V4h8v3M3 7h18v14H3zM3 12h18',calendar:'M5 3v4m14-4v4M3 6h18v15H3zM3 11h18',file:'M14 2H5v20h14V7zM14 2v5h5M8 12h8m-8 4h8',money:'M3 5h18v14H3zM12 8v8m-3-4h6',home:'M3 11l9-8 9 8M5 9v12h14V9',people:'M16 21v-3a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v3M9 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8m9-7a4 4 0 0 1 0 8m4 10v-3a4 4 0 0 0-3-4',lock:'M6 10V7a6 6 0 0 1 12 0v3M4 10h16v12H4zM12 14v4',book:'M3 3h7l2 2 2-2h7v17h-7l-2 2-2-2H3zM12 5v17',settings:'M12 3v3m0 12v3M3 12h3m12 0h3M6 6l2 2m8 8 2 2M6 18l2-2m8-8 2-2M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8',logout:'M9 3H3v18h6m5-14 5 5-5 5m-7-5h14'};return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name]||paths.file}/></svg>}
-function Brand({compact=false}) {return <a href="/" className={'brand transparent-logo '+(compact?'compact':'')} aria-label="Muzzi & Almeida Advocacia, início"><img src="/logo-transparente.png" alt="Muzzi & Almeida Advocacia"/></a>}
+function Brand({compact=false}) {return <a href="/" className={'brand transparent-logo '+(compact?'compact':'')} aria-label="Muzzi & Almeida Advocacia, início"><img src="/logo-muzzi-almeida.svg" alt="Muzzi & Almeida Advocacia"/></a>}
 function App(){
  const [user,setUser]=useState(null),[ready,setReady]=useState(!db),[settings,setSettings]=useState(defaultSettings),[articles,setArticles]=useState([]);
  const [path,setPath]=useState(location.pathname),[notice,setNotice]=useState('');
