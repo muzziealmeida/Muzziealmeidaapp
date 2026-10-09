@@ -1,0 +1,23 @@
+import React,{useState} from 'react';
+
+export default function MobileExperience({articles,settings,go}){
+  const [term,setTerm]=useState('');
+  const [category,setCategory]=useState('Todos');
+  const [article,setArticle]=useState(null);
+  const categories=['Todos',...new Set(articles.map(a=>a.category).filter(Boolean))];
+  const visible=articles.filter(a=>(category==='Todos'||a.category===category)&&[a.title,a.summary,a.category].join(' ').toLocaleLowerCase('pt-BR').includes(term.toLocaleLowerCase('pt-BR')));
+  return <div className="mobile-experience">
+    <header className="mobile-app-header"><a href="/app" aria-label="Início do aplicativo" className="mobile-wordmark">MUZZI <span>&</span> ALMEIDA<small>ADVOCACIA</small></a><button className="mobile-access" onClick={()=>go('/app/acessar')}>Entrar ↗</button></header>
+    {article?<main className="mobile-app-content"><button className="mobile-back" onClick={()=>setArticle(null)}>← Voltar aos artigos</button><span className="eyebrow">{article.category||'PUBLICAÇÃO'} · {new Date(article.created_at).toLocaleDateString('pt-BR')}</span><h1>{article.title}</h1>{article.summary&&<p className="mobile-lead">{article.summary}</p>}<div className="mobile-reading">{article.body}</div>{article.pdf_url&&/^https?:\/\//i.test(article.pdf_url)&&<a className="button" href={article.pdf_url} target="_blank" rel="noopener noreferrer">Abrir material</a>}</main>:<main className="mobile-app-content">
+      <div className="mobile-intro"><span className="eyebrow light">CONTEÚDO JURÍDICO</span><h1>Informação para <em>decidir melhor.</em></h1><p>Publicações e orientações do escritório, sempre ao seu alcance.</p></div>
+      <section className="mobile-quick"><button onClick={()=>go('/app/cliente')}><span>ÁREA RESERVADA</span><strong>Sou cliente</strong><small>Processos, documentos e agenda ↗</small></button><button onClick={()=>go('/app/advogados')}><span>GESTÃO DO ESCRITÓRIO</span><strong>Sou advogado</strong><small>Atendimentos e publicações ↗</small></button></section>
+      <section className="mobile-articles" id="app-artigos"><div className="mobile-section-head"><span className="eyebrow">BIBLIOTECA</span><h2>Artigos e atualizações</h2></div><label className="mobile-search"><span className="sr-only">Buscar artigos</span><input placeholder="Buscar por assunto ou título…" value={term} onChange={e=>setTerm(e.target.value)}/></label><div className="mobile-filters">{categories.map(c=><button key={c} onClick={()=>setCategory(c)} aria-pressed={category===c} className={category===c?'selected':''}>{c}</button>)}</div>
+        {visible.length?visible.map(a=><button className="mobile-article" key={a.id} onClick={()=>{setArticle(a);window.scrollTo(0,0)}}><span className="eyebrow">{a.category||'ARTIGO'} · {new Date(a.created_at).toLocaleDateString('pt-BR')}</span><h3>{a.title}</h3><p>{a.summary}</p><span className="mobile-read-more">Ler artigo →</span></button>):<div className="mobile-no-articles">Nenhum artigo encontrado. {articles.length?'Tente outra busca.':'As publicações aparecerão aqui quando forem disponibilizadas.'}</div>}
+      </section><section className="mobile-contact"><h2>Precisa falar com o escritório?</h2>{settings.email?<a href={'mailto:'+settings.email}>Entrar em contato ↗</a>:<p>Os canais de atendimento serão divulgados em breve.</p>}</section>
+    </main>}
+    <nav className="mobile-bottom-nav" aria-label="Navegação do aplicativo"><button onClick={()=>{setArticle(null);go('/app')}}>⌂<small>Início</small></button><button onClick={()=>{setArticle(null);go('/app');setTimeout(()=>document.getElementById('app-artigos')?.scrollIntoView({behavior:'smooth'}),0)}}>▤<small>Artigos</small></button><button onClick={()=>go('/app/acessar')}>♙<small>Acessar</small></button></nav>
+  </div>;
+}
+export function MobileAccess({go}){
+ return <div className="mobile-experience"><header className="mobile-app-header"><a href="/app" className="mobile-wordmark">MUZZI <span>&</span> ALMEIDA<small>ADVOCACIA</small></a></header><main className="mobile-app-content mobile-access-select"><button className="mobile-back" onClick={()=>go('/app')}>← Voltar</button><span className="eyebrow">ACESSO RESERVADO</span><h1>Como deseja acessar?</h1><p>Escolha sua área para entrar com seu usuário e senha.</p><button onClick={()=>go('/app/cliente')}><strong>Área do cliente</strong><span>Consultar processos, documentos e compromissos →</span></button><button onClick={()=>go('/app/advogados')}><strong>Área dos advogados</strong><span>Gerenciar atendimentos, conteúdos e informações →</span></button></main></div>
+}
