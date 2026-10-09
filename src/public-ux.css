@@ -142,3 +142,9 @@
     height: 70px;
   }
 }
+
+/* Corrige a arte com margem interna transparente: amplia os pixels visíveis, não só o contêiner. */
+.public-shell .public-header > .brand.transparent-logo{width:240px;min-width:240px;height:108px;overflow:hidden;flex-shrink:0;aspect-ratio:auto}
+.public-shell .public-header > .brand.transparent-logo img{position:relative!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:contain!important;transform:scale(2.65);transform-origin:center center}
+@media(max-width:1150px){.public-shell .public-header > .brand.transparent-logo{width:190px;min-width:190px;height:88px}}
+@media(max-width:768px){.public-shell .public-header > .brand.transparent-logo{width:160px;min-width:160px;height:74px}}
