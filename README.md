@@ -35,6 +35,14 @@ Isso provisiona `@rafaelmuzzi` como administrador e exige troca da senha no prim
 11. O papel de acesso fica em `user_access`, com escrita exclusiva pelo serviço administrativo. Alterar metadata no navegador não concede acesso.
 12. Revisar advisors e verificar login, troca de senha e isolamento no projeto escolhido antes de disponibilizar dados reais.
 
+## Website e aplicativo PWA (duas experiências)
+
+O website institucional continua em `/`, com áreas públicas, artigos, contato e acesso de **clientes** (`/cliente`) e **advogados** (`/advogados`).
+
+O aplicativo instalável tem entrada independente em `/app`, com feed de artigos, busca por título, assunto e categoria, leitura mobile e escolha de acesso em `/app/acessar`. Os mesmos clientes entram em `/app/cliente` e os mesmos advogados em `/app/advogados`, reutilizando o portal, a autenticação e as políticas de acesso existentes.
+
+Ambos usam os mesmos artigos publicados e os mesmos registros; nenhuma nova tabela foi criada. A separação é de **experiência e roteamento**, não de isolamento de dados. O PWA segue utilizando o service worker já existente. Para entradas por `/app` em subdomínio separado, configurar domínio/deploy e redirecionamentos de Auth antes de liberar. A interface instalada não é um aplicativo nativo das lojas.
+
 ## Funcionalidades
 
 - Site responsivo com escritório, atuação, conteúdos, contatos e localização.
