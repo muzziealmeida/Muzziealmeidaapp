@@ -97,3 +97,11 @@
 @media(max-width:800px){.public-shell .hero{padding:50px 6% 35px}.public-shell .hero h1{font-size:clamp(33px,7vw,48px)}.public-shell .hero-copy>p{font-size:14px}.public-shell .hero-note{font-size:9px;margin-bottom:35px}.public-shell .section{padding:55px 6%;scroll-margin-top:105px}.public-shell .about,.public-shell .client-banner,.public-shell .contact{grid-template-columns:1fr;gap:30px}.public-shell .section-heading>p{margin-top:18px;max-width:none}.public-shell .contact-portal{padding:25px}.public-shell .footer-main{grid-template-columns:1fr 1fr}.public-shell .footer-main>div:first-child{grid-column:1/-1}.public-shell .footer-bottom{flex-direction:column;gap:10px}}
 @media(max-width:480px){.public-shell .hero-actions{flex-direction:column;align-items:stretch}.public-shell .service-ribbon{gap:12px}.public-shell .service-tile{padding:17px}.public-shell .service-tile h2{font-size:21px}.public-shell .service-tile p{font-size:11px}.public-shell .service-tile>span{font-size:9px;gap:8px}.public-shell .pillar-grid,.public-shell .area-grid,.public-shell .article-grid,.public-shell .team-grid{grid-template-columns:1fr}.public-shell .portal-preview{padding:20px}.public-shell .preview-grid>div{padding:15px 10px;font-size:11px}.public-shell .hero-kicker{font-size:9px;letter-spacing:.09em}}
 @media(prefers-reduced-motion:reduce){.public-shell a,.public-shell button{transition:none}}
+
+/* Original transparent PNG; CSS trims only its transparent margins. */
+.brand.transparent-logo{background:transparent;height:auto;aspect-ratio:236/91}
+.brand.transparent-logo img{width:211.8644%;left:-55.9322%;top:-229.6703%;height:auto}
+.public-shell .team-intro{display:flex;align-items:start;gap:25px;padding:35px;background:var(--deep);border:1px solid color-mix(in srgb,var(--silver) 25%,transparent)}
+.public-shell .team-intro h3{font-size:28px}.public-shell .team-intro p{color:var(--silver);font-size:14px;max-width:650px}
+.public-shell .team-intro .icon-box{flex-shrink:0}
+@media(max-width:480px){.public-shell .team-intro{padding:25px;flex-direction:column;gap:5px}}
