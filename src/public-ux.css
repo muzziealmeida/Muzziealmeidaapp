@@ -1,0 +1,99 @@
+/* Reference UX adapted to the existing Muzzi & Almeida brand tokens. */
+.public-shell{background:var(--ink);color:var(--white)}
+.public-shell .skip-link{position:fixed;left:20px;top:-100px;background:var(--silver);color:var(--deep);padding:15px;z-index:200}
+.public-shell .skip-link:focus{top:15px}
+.public-shell a:focus-visible,.public-shell button:focus-visible{outline-color:var(--silver)}
+.public-shell .public-header{position:sticky;top:0;z-index:30;padding:9px max(4%,calc((100vw - 1320px)/2));background:var(--deep);border-color:color-mix(in srgb,var(--silver) 22%,transparent)}
+.public-shell .public-header nav{gap:22px;font-size:11px}
+.public-shell .public-header nav>a{min-height:44px;display:flex;align-items:center}
+.public-shell .header-lawyer{padding:12px 15px;background:var(--ink);border:1px solid var(--silver)}
+.public-shell .header-login{border-color:var(--silver)}
+.public-shell .hero{display:block;padding:76px max(5%,calc((100vw - 1240px)/2)) 48px;min-height:0;background:radial-gradient(ellipse at 50% 10%,color-mix(in srgb,var(--silver) 9%,transparent),transparent 58%),var(--ink)}
+.public-shell .hero-copy{padding:0;text-align:center;max-width:850px;margin:0 auto}
+.public-shell .hero-kicker{display:inline-flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.15em;border:1px solid color-mix(in srgb,var(--silver) 40%,transparent);padding:10px 14px;color:var(--silver);margin-bottom:26px}
+.public-shell .hero-kicker>span{width:5px;height:5px;border-radius:50%;background:var(--silver)}
+.public-shell .hero h1{font-size:clamp(36px,4.7vw,64px);line-height:1.15;margin-bottom:25px}
+.public-shell .hero h1 em{color:var(--silver)}
+.public-shell .hero-copy>p{max-width:610px;margin:0 auto 32px;color:var(--silver);font-size:16px}
+.public-shell .hero-actions{justify-content:center;gap:15px}
+.public-shell .button.silver{background:var(--silver);border-color:var(--silver);color:var(--deep)}
+.public-shell .button.secondary{color:var(--white);border-color:var(--silver)}
+.public-shell .hero-note{justify-content:center;margin:28px 0 50px;color:var(--silver)}
+.public-shell .service-ribbon{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;border-top:1px solid color-mix(in srgb,var(--silver) 30%,transparent);padding-top:30px}
+.public-shell .service-tile{background:var(--deep);padding:25px;border:1px solid color-mix(in srgb,var(--silver) 22%,transparent)}
+.public-shell .service-tile>svg{color:var(--silver);margin-bottom:18px}
+.public-shell .service-tile h2{font-size:24px;letter-spacing:0;margin-bottom:12px}
+.public-shell .service-tile p{color:var(--silver);font-size:12px;line-height:1.7;min-height:62px;margin-bottom:20px}
+.public-shell .service-tile>span{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--silver)}
+.public-shell .section{padding:85px max(5%,calc((100vw - 1240px)/2));scroll-margin-top:115px;border-bottom:1px solid color-mix(in srgb,var(--silver) 20%,transparent)}
+.public-shell .eyebrow{color:var(--silver)}
+.public-shell .about{grid-template-columns:5fr 7fr;gap:55px}
+.public-shell .about-copy{padding:0}
+.public-shell .about-copy>p{font-family:inherit;font-size:14px;color:var(--silver);line-height:1.9}
+.public-shell .section h2{font-size:clamp(30px,3.3vw,44px);line-height:1.2}
+.public-shell .pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.public-shell .pillar-card{padding:28px;background:var(--deep);border:1px solid color-mix(in srgb,var(--silver) 22%,transparent)}
+.public-shell .icon-box{display:inline-grid;place-items:center;width:43px;height:43px;border:1px solid color-mix(in srgb,var(--silver) 35%,transparent);color:var(--silver);margin-bottom:22px}
+.public-shell .pillar-card h3{font-family:inherit;font-size:16px;font-weight:500;letter-spacing:0}
+.public-shell .pillar-card p{font-size:12px;color:var(--silver);line-height:1.8}
+.public-shell .pillar-card .eyebrow{margin:25px 0 0;font-size:9px}
+.public-shell .areas,.public-shell .insights{background:var(--deep)}
+.public-shell .section-heading{margin-bottom:30px;align-items:end}
+.public-shell .section-heading h2{margin-bottom:0}
+.public-shell .section-heading>p{color:var(--silver);font-size:12px;max-width:290px}
+.public-shell .area-card{padding:28px;background:var(--ink);border:1px solid color-mix(in srgb,var(--silver) 25%,transparent);display:flex;flex-direction:column}
+.public-shell .card-top{display:flex;align-items:center;justify-content:space-between;color:var(--silver)}
+.public-shell .area-card .number{color:var(--silver)}
+.public-shell .area-card h3{font-size:25px;margin:26px 0 15px}
+.public-shell .area-card p{color:var(--silver);max-width:none;flex:1}
+.public-shell .area-card>a{position:static;align-self:start;margin-top:18px;font-size:11px}
+.public-shell .client-banner{gap:65px;grid-template-columns:1fr 1fr;background:var(--ink);align-items:center}
+.public-shell .client-banner p{color:var(--silver);line-height:1.8}
+.public-shell .feature-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:25px 0 35px}
+.public-shell .feature-list>div{padding:0;border:0;gap:10px;color:var(--silver);font-size:12px}
+.public-shell .portal-preview{background:var(--deep);border:1px solid color-mix(in srgb,var(--silver) 40%,transparent);padding:30px;box-shadow:0 20px 55px color-mix(in srgb,var(--deep) 45%,transparent)}
+.public-shell .preview-heading{display:flex;align-items:center;gap:8px;border-bottom:1px solid color-mix(in srgb,var(--silver) 25%,transparent);padding-bottom:22px;margin-bottom:27px;font-size:9px;letter-spacing:.08em;color:var(--silver);flex-wrap:wrap}
+.public-shell .preview-status{margin-left:auto;font-size:9px;letter-spacing:0;background:var(--ink);padding:7px 9px}
+.public-shell .portal-preview h3{font-size:27px;margin-bottom:10px}
+.public-shell .portal-preview>p{font-size:12px}
+.public-shell .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.public-shell .preview-grid>div{display:flex;align-items:center;gap:10px;padding:20px 14px;border:1px solid color-mix(in srgb,var(--silver) 20%,transparent);font-size:12px;color:var(--silver)}
+.public-shell .preview-step{display:flex;align-items:center;gap:15px;background:var(--ink);padding:18px;margin-bottom:24px}
+.public-shell .preview-step .icon-box{margin:0;flex-shrink:0}
+.public-shell .preview-step strong{font-size:12px}
+.public-shell .preview-step p{font-size:11px;margin:5px 0 0}
+.public-shell .portal-preview>small{display:block;color:var(--silver);font-size:10px;margin-top:20px;line-height:1.7}
+.public-shell .team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.public-shell .team-card{border:1px solid color-mix(in srgb,var(--silver) 25%,transparent);padding:28px;background:var(--deep)}
+.public-shell .team-avatar{height:100px;display:grid;place-items:center;color:var(--silver);font-family:var(--serif);font-size:38px;background:var(--ink);margin-bottom:24px}
+.public-shell .team-card h3{font-size:26px}.public-shell .team-card p{font-size:12px;color:var(--silver)}
+.public-shell .article-filters{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 25px}
+.public-shell .article-filters button{background:transparent;color:var(--silver);border:1px solid var(--silver);padding:12px 16px;font-size:11px;min-height:44px}
+.public-shell .article-filters button[aria-pressed=true]{background:var(--silver);color:var(--deep)}
+.public-shell .article-card{padding:0;background:var(--ink);border:1px solid color-mix(in srgb,var(--silver) 25%,transparent);display:flex;flex-direction:column}
+.public-shell .article-mark{display:grid;place-items:center;height:100px;background:color-mix(in srgb,var(--silver) 10%,var(--ink));color:var(--silver)}
+.public-shell .article-content{padding:28px;display:flex;flex-direction:column;flex:1}
+.public-shell .article-content h3{font-size:25px}.public-shell .article-content p{color:var(--silver);flex:1}
+.public-shell .article-content .inline-link{align-self:start;margin-top:12px}
+.public-shell .public-empty{background:transparent;border-color:color-mix(in srgb,var(--silver) 30%,transparent);color:var(--silver)}
+.public-shell .contact{background:var(--ink);grid-template-columns:1.1fr 1fr;gap:75px}
+.public-shell .contact-details{max-width:490px;color:var(--silver)}
+.public-shell .contact-portal{background:var(--deep);padding:35px;border:1px solid color-mix(in srgb,var(--silver) 25%,transparent);align-self:start}
+.public-shell .contact-portal h3{font-size:30px}
+.public-shell .contact-portal p{font-size:13px;color:var(--silver)}
+.public-shell .lawyer-contact{border-top:1px solid color-mix(in srgb,var(--silver) 25%,transparent);padding-top:24px;margin-top:28px;font-size:11px;color:var(--silver)}
+.public-shell .lawyer-contact a{display:flex;justify-content:space-between;gap:15px;margin-top:14px;min-height:44px;align-items:center}
+.public-shell footer{display:block;padding:50px max(5%,calc((100vw - 1240px)/2)) 25px;background:var(--deep);color:var(--silver)}
+.public-shell .footer-main{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px;margin-bottom:40px}
+.public-shell .footer-main>div>a:not(.brand){display:block;font-size:12px;padding:10px 0}
+.public-shell .footer-main p{font-size:11px;margin:15px 0 0}
+.public-shell .footer-bottom{border-top:1px solid color-mix(in srgb,var(--silver) 25%,transparent);padding-top:22px;display:flex;justify-content:space-between;gap:20px;font-size:10px;line-height:1.7}
+.public-shell .modal{color:var(--ink)}
+.public-shell .modal .eyebrow{color:var(--muted)}
+.public-shell a,.public-shell button{transition:background .18s,border-color .18s}
+.public-shell .service-tile:hover,.public-shell .area-card:hover{border-color:var(--silver)}
+@media(max-width:1150px){.public-shell .public-header nav{gap:13px;font-size:10px}.public-shell .public-header>.brand{width:175px;height:73px}.public-shell .about,.public-shell .client-banner{gap:30px}.public-shell .service-tile{padding:20px}}
+@media(max-width:1000px){.public-shell .menu-toggle{display:block}.public-shell .public-header nav{display:none;position:absolute;top:100%;left:0;right:0;padding:20px 5%;background:var(--deep);flex-direction:column;align-items:stretch;border-bottom:1px solid var(--silver);max-height:calc(100dvh - 100px);overflow:auto}.public-shell .public-header nav.open{display:flex}.public-shell .public-header nav>a{padding:12px;font-size:12px}.public-shell .service-ribbon{grid-template-columns:repeat(2,minmax(0,1fr))}.public-shell .service-tile p{min-height:0}.public-shell .area-grid,.public-shell .article-grid,.public-shell .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.public-shell .hero{padding:50px 6% 35px}.public-shell .hero h1{font-size:clamp(33px,7vw,48px)}.public-shell .hero-copy>p{font-size:14px}.public-shell .hero-note{font-size:9px;margin-bottom:35px}.public-shell .section{padding:55px 6%;scroll-margin-top:105px}.public-shell .about,.public-shell .client-banner,.public-shell .contact{grid-template-columns:1fr;gap:30px}.public-shell .section-heading>p{margin-top:18px;max-width:none}.public-shell .contact-portal{padding:25px}.public-shell .footer-main{grid-template-columns:1fr 1fr}.public-shell .footer-main>div:first-child{grid-column:1/-1}.public-shell .footer-bottom{flex-direction:column;gap:10px}}
+@media(max-width:480px){.public-shell .hero-actions{flex-direction:column;align-items:stretch}.public-shell .service-ribbon{gap:12px}.public-shell .service-tile{padding:17px}.public-shell .service-tile h2{font-size:21px}.public-shell .service-tile p{font-size:11px}.public-shell .service-tile>span{font-size:9px;gap:8px}.public-shell .pillar-grid,.public-shell .area-grid,.public-shell .article-grid,.public-shell .team-grid{grid-template-columns:1fr}.public-shell .portal-preview{padding:20px}.public-shell .preview-grid>div{padding:15px 10px;font-size:11px}.public-shell .hero-kicker{font-size:9px;letter-spacing:.09em}}
+@media(prefers-reduced-motion:reduce){.public-shell a,.public-shell button{transition:none}}
