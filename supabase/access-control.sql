@@ -62,11 +62,9 @@ grant execute on function public.mark_access_password_changed(uuid),public.requi
 
 do $$ declare t text; begin
  foreach t in array array['cases','events','payments','documents'] loop
-  execute format('drop policy client_read on public.%I',t);
-  execute format('create policy client_read on public.%I for select to authenticated using((select private.access_ready()) and (client_id=(select auth.uid()) or (select private.is_staff())))',t);
+  execute format('alter policy client_read on public.%I to authenticated using((select private.access_ready()) and (client_id=(select auth.uid()) or (select private.is_staff())))',t);
  end loop;
 end $$;
-drop policy document_read on storage.objects;
-create policy document_read on storage.objects for select to authenticated
+alter policy document_read on storage.objects to authenticated
 using(bucket_id='client-documents' and (select private.access_ready()) and ((storage.foldername(name))[1]=(select auth.uid())::text or (select private.is_staff())));
 commit;

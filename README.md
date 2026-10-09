@@ -20,7 +20,7 @@ Sem essas variáveis, o site público funciona e o login informa que a área est
 2. Revisar e executar `supabase/bootstrap.sql` no SQL Editor do projeto. É um bootstrap inicial, não uma migração incremental; não repetir em banco já configurado.
 3. Configurar Auth com confirmação de e-mail, Site URL e Redirect URLs (`https://DOMINIO/cliente` e endereço local para desenvolvimento).
 4. Revisar e executar `supabase/access-control.sql` depois do bootstrap. Isso adiciona login por usuário, bloqueio de primeiro acesso e invalidação de sessões antigas por data.
-5. Configurar no servidor/Vercel `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `INITIAL_ACCESS_PASSWORD` e `APP_URL`. Chaves administrativas e senha provisória ficam somente no servidor, sem prefixo `VITE_`.
+5. Configurar no servidor/Vercel `SUPABASE_URL`, `SUPABASE_ACCESS_FUNCTION_URL`, `INITIAL_ACCESS_PASSWORD` e `APP_URL`; `SUPABASE_SERVICE_ROLE_KEY` só é necessário para execução direta sem Edge Function. Chaves administrativas e senha provisória ficam somente no servidor, sem prefixo `VITE_`.
 6. Desativar cadastro público em Auth; as contas são criadas pelos advogados. Cada usuário tem um alias interno de autenticação; esse alias não recebe e-mails. Recuperação assistida em “Gerenciar acessos”.
 7. Com variáveis configuradas e banco correto, executar uma única vez:
 
@@ -28,7 +28,7 @@ Sem essas variáveis, o site público funciona e o login informa que a área est
 node --env-file=.env scripts/create-first-lawyer.mjs
 ```
 
-Isso provisiona `@rafaelmuzzi` como administrador e exige troca da senha no primeiro acesso. O script **ainda não foi executado contra um projeto remoto**.
+Isso provisiona `@rafaelmuzzi` como administrador e exige troca da senha no primeiro acesso. A conta já foi provisionada no projeto dedicado por uma função temporária usando a Auth Admin API. Não execute novamente para esse usuário.
 8. Advogados entram em `/advogados` (o endereço anterior `/equipe` também funciona). Clientes entram em `/cliente`.
 9. Depois da troca obrigatória, o usuário precisa entrar novamente com a senha pessoal. RLS bloqueia sessões anteriores, mesmo que ainda tenham um JWT sem expiração.
 10. No painel, “Gerenciar acessos” cria clientes ou advogados e redefine a senha provisória, exigindo nova troca. Os advogados têm acesso à gestão dos registros e dos conteúdos do site.
@@ -67,4 +67,12 @@ Testes locais de RLS usam PostgreSQL embutido com mocks de Auth/Storage. São co
 
 ## Estado da entrega
 
-Implementação inicial versionada neste repositório. Build de produção e testes locais de acesso aprovados. Validação visual no navegador pendente. Vercel configurada na conta Muzzi. O projeto Supabase do escritório ainda precisa ser disponibilizado; as conexões atuais mostram somente projetos de outros trabalhos. O schema não foi aplicado remotamente; autenticação, persistência e isolamento precisam ser verificados no ambiente escolhido antes do uso com informações reais.
+Implementação inicial versionada neste repositório. Build de produção e testes locais de acesso aprovados. Validação visual no navegador pendente. Vercel configurada na conta Muzzi. Supabase dedicado conectado e schemas aplicados. O acesso administrativo usa uma Edge Function com autenticação e verificação de sessão; a chave administrativa permanece no servidor Supabase.
+
+## Connected deployment
+
+The dedicated project `wtuzunibudcuasdwhrur` now has the bootstrap and access-control schemas applied. The `rafaelmuzzi` administrator was provisioned through the Auth Admin API with mandatory first-login password change. The temporary provisioning function was closed afterward.
+
+Vercel proxies `/api/access` to the `office-access` Edge Function using the signed-in user's JWT. The function independently checks Auth identity, session freshness, database role and first-login status before administrative operations. It reads the administrative key from Supabase's built-in server environment; no service key is needed in Vercel or the browser. The provisional password comes from the sensitive Vercel environment and is checked against its SHA-256 fingerprint in the function. Changes to the provisional password require updating that fingerprint and redeploying the function.
+
+The Edge Function source is `supabase/functions/office-access/index.ts`; include the referenced `server/` and `shared/` modules when bundling. The deployed bundle uses the same shared handler and account helpers. `verify_jwt=false` is intentional: the handler validates the user's token with Auth `getUser()` and checks the backing session in the database before granting any operation. There is no anonymous administration path.
